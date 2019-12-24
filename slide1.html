@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="title" content="">
+
+<title>ICICI Track My Application</title>
+<link rel="stylesheet" href="css/style.css"> 
+</head>
+<body>
+<div class="header notitle">
+	<div class="title "></div>
+    <div class="brand"><img src="images/logo.png" alt="icici logo" /></div>
+</div>
+<div class="mainContent">
+	<div class="content">
+        <div class="leftSide"><img src="images/track-loan-figure.png" alt="track my loan" /></div>
+        <div class="rightSide">
+            <div id="react-root"></div>
+            <form action="slide2.html" method="post" name="searchApplication" class="searchForm" onsubmit="return validateForm()">
+                <div class="form-control">
+                    <label>Application Number</label>
+                    <input type="text" name="appNumber" id="appNumber" />
+                </div>
+                <div class="optionLabel">OR</div>
+                <div class="form-control form-number">
+                    <div class="mobNumber">
+                        <div class="countryCode">
+                            <label>Country Code</label>
+                            <input  type="text" name="countryCode" maxlength="5"  onKeyPress="return isNumber()"  />
+                        </div>
+                        <div class="mobileNumber">
+                            <label>Mobile Number</label>
+                            <input   type="text" name="mobileNumber"  pattern="(.){6,15}" title="Please Enter Valid Mobile Number" maxlength="15"  onKeyPress="return isNumber()"  />
+                        </div>
+                    </div>
+                    <label class="labelnote">(Please enter the mobile number mentioned in the application)</label>
+                </div>
+                <div class="form-control">
+                    <input type="submit" name="send" value="LOGIN" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script> 
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script src="js/main.js"></script>
+<script src="js/app.js"></script>
+<script>
+	function isNumber(evt) {
+		evt = (evt) ? evt : window.event;
+		var charCode = (evt.which) ? evt.which : evt.keyCode;
+		if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+			return false;
+		}
+		return true;
+	}
+</script>
+</body>
+</html>
